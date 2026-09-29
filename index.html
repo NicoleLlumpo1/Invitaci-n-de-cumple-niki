@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Niki Birthday - Invitación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilosInvitacionCumpleanos.css">
+</head>
+<body class="paginaInvitacion">
+
+  <!-- ===== TARJETA DE LA INVITACIÓN ===== -->
+  <main class="tarjetaInvitacion">
+
+    <!-- ===== ILUSTRACIÓN COMPLETA (marco, textos y dibujos) ===== -->
+    <svg class="ilustracionInvitacion" viewBox="0 0 620 960" aria-label="Invitación al cumpleaños de Niki">
+
+      <defs>
+        <!-- Estrella de 4 puntas reutilizable -->
+        <symbol id="dibujoEstrellaBrillo" viewBox="-10 -10 20 20">
+          <path class="trazoEstrella" d="M0 -9 Q1.5 -1.5 9 0 Q1.5 1.5 0 9 Q-1.5 1.5 -9 0 Q-1.5 -1.5 0 -9 Z"/>
+        </symbol>
+        <!-- Vela con llama reutilizable (base en 0,0) -->
+        <g id="dibujoVelaConLlama">
+          <path class="trazoRojo" d="M-5 0 L-4 -48 L5 -48 L6 0"/>
+          <path class="trazoRojo" d="M0 -50 Q-9 -62 -1 -74 Q9 -62 0 -50 Z"/>
+        </g>
+        <!-- Curva para el texto "Te invito a" -->
+        <path id="trazadoArcoTeInvitoA" d="M225 196 Q312 138 402 196"/>
+      </defs>
+
+      <!-- ===== MARCO ONDULADO ===== -->
+      <path id="trazadoMarcoOndulado" class="lineaMarcoOndulado" d=""/>
+
+      <!-- ===== TEXTOS PRINCIPALES ===== -->
+      <text class="textoTeInvitoA">
+        <textPath href="#trazadoArcoTeInvitoA" startOffset="50%" text-anchor="middle">Te invito a</textPath>
+      </text>
+      <text class="textoNombreFestejada" x="318" y="288" text-anchor="middle">niki</text>
+      <text class="textoBirthday" x="308" y="355" text-anchor="middle">Birthday</text>
+
+      <text class="textoFechaHora" x="308" y="402" text-anchor="middle">Octubre 3,</text>
+      <text class="textoFechaHora" x="308" y="437" text-anchor="middle">a las 20:00 hs</text>
+
+      <text class="textoDireccion" x="310" y="698" text-anchor="middle">El Jilguero 385, Vista</text>
+      <text class="textoDireccion" x="310" y="726" text-anchor="middle">Linda</text>
+
+      <!-- ===== DIBUJOS: CORONA ===== -->
+      <g class="dibujoCorona">
+        <path class="trazoRojo" d="M120 202 L114 176 L138 192 L152 162 L168 192 L188 170 L186 200 Q152 216 120 202 Z"/>
+        <circle class="trazoRojo" cx="114" cy="173" r="3"/>
+        <circle class="trazoRojo" cx="152" cy="159" r="3"/>
+        <circle class="trazoRojo" cx="188" cy="167" r="3"/>
+      </g>
+
+      <!-- ===== DIBUJOS: DESTELLOS (arriba a la derecha) ===== 
+      <g class="dibujoDestellos">
+        <path class="trazoRojo" d="M448 222 L462 182 L470 208 Z"/>
+        <path class="trazoRojo" d="M460 234 L494 204 L482 238 Z"/>
+        <path class="trazoRojo" d="M464 244 L500 238 L500 252 Z"/>
+      </g>-->
+<!-- ===== DIBUJOS: DESTELLOS (arriba a la derecha) ===== -->
+<g class="dibujoDestellos" transform="translate(446 250)">
+  <path class="trazoRojo" d="M16 -3 L60 -1 L16 5 Z" transform="rotate(-74)"/>
+  <path class="trazoRojo" d="M16 -3 L60 -1 L16 5 Z" transform="rotate(-40)"/>
+  <path class="trazoRojo" d="M16 -3 L60 -1 L16 5 Z" transform="rotate(-6)"/>
+</g>
+      <!-- ===== DIBUJOS: CORAZÓN ===== -->
+      <g class="dibujoCorazon">
+        <path class="trazoRojo" d="M462 486 C440 470 438 448 452 442 C462 438 470 446 472 452 C478 440 492 442 490 458 C488 470 476 478 462 486 Z"/>
+        <path class="trazoRojo" d="M452 468 L474 456"/>
+      </g>
+
+      <!-- ===== DIBUJOS: BRILLOS ===== -->
+      <use class="dibujoBrillo" href="#dibujoEstrellaBrillo" x="174" y="448" width="44" height="44"/>
+      <use class="dibujoBrillo" href="#dibujoEstrellaBrillo" x="150" y="468" width="20" height="20"/>
+      <use class="dibujoBrillo" href="#dibujoEstrellaBrillo" x="162" y="494" width="28" height="28"/>
+      <use class="dibujoBrillo" href="#dibujoEstrellaBrillo" x="422" y="594" width="42" height="42"/>
+      <use class="dibujoBrillo" href="#dibujoEstrellaBrillo" x="448" y="630" width="20" height="20"/>
+
+      <!-- ===== DIBUJOS: MOÑO ===== 
+      <g class="dibujoMoño">
+        <path class="trazoRojo" d="M124 650 Q132 624 158 626 Q182 632 168 650 Q148 662 124 650 Z"/>
+        <path class="trazoRojo" d="M150 658 Q136 670 126 682"/>
+        <path class="trazoRojo" d="M166 654 Q180 654 190 662"/>
+      </g>-->
+<!-- ===== DIBUJOS: MOÑO ===== -->
+<g class="dibujoMoño" transform="translate(155 652) scale(0.75) translate(-155 -652)">
+  <!-- Lazo izquierdo -->
+  <path class="trazoRojo" d="M155 652 C140 630 112 622 108 640 C106 660 132 664 155 652 Z"/>
+  <!-- Lazo derecho -->
+  <path class="trazoRojo" d="M155 652 C170 630 198 622 202 640 C204 660 178 664 155 652 Z"/>
+  <!-- Pliegues de los lazos -->
+  <path class="trazoRojo" d="M140 641 Q128 640 119 646"/>
+  <path class="trazoRojo" d="M170 641 Q182 640 191 646"/>
+  <!-- Colas de la cinta -->
+  <path class="trazoRojo" d="M150 662 L132 700 L144 695 L151 707 L158 663"/>
+  <path class="trazoRojo" d="M158 663 L166 707 L173 695 L186 700 L165 662"/>
+  <!-- Nudo central -->
+  <path class="trazoRojo" d="M147 645 Q155 639 163 645 Q166 653 163 660 Q155 665 147 660 Q144 652 147 645 Z"/>
+</g>
+      <!-- ===== DIBUJOS: TORTA ===== -->
+      <g class="dibujoTorta">
+        <use href="#dibujoVelaConLlama" transform="translate(275 540) rotate(2)"/>
+        <use href="#dibujoVelaConLlama" transform="translate(304 544) rotate(5)"/>
+        <use href="#dibujoVelaConLlama" transform="translate(329 546) rotate(9)"/>
+        <use href="#dibujoVelaConLlama" transform="translate(354 546) rotate(11)"/>
+        <ellipse class="trazoRojo" cx="314" cy="545" rx="96" ry="22"/>
+        <path class="trazoRojo" d="M218 550 C210 572 213 590 217 600 L217 630 Q312 662 404 638 L406 600 L408 550"/>
+        <path class="trazoRojo" d="M217 600 Q312 622 406 598"/>
+        <path class="trazoRojo" d="M217 586 Q236 576 246 590 Q252 612 266 610 Q276 602 279 590 Q291 574 301 590 Q306 616 319 612 Q331 606 331 588 Q346 574 359 590 Q363 610 373 608 Q381 600 381 588 Q394 578 406 586"/>
+      </g>
+
+      <!-- ===== TEXTO CAMBIANTE DE LA PREGUNTA ===== -->
+      <text class="textoPreguntaAsistencia" id="textoPreguntaAsistencia" x="310" y="762" text-anchor="middle">¿Venís?</text>
+    </svg>
+
+    <!-- ===== CONFIRMACIÓN DE ASISTENCIA ===== -->
+    <section class="seccionConfirmacion">
+      <div class="contenedorBotonesAsistencia" id="contenedorBotonesAsistencia">
+        <button type="button" class="botonConfirmarSi" id="botonConfirmarSi">Sí, voy 💖</button>
+        <button type="button" class="botonConfirmarNo" id="botonConfirmarNo">No</button>
+      </div>
+      <p class="mensajeAsistenciaConfirmada oculto" id="mensajeAsistenciaConfirmada">¡Confirmado! Te espero 🎂✨</p>
+    </section>
+
+  </main>
+
+  <script src="logicaInvitacionCumpleanos.js"></script>
+</body>
+</html>

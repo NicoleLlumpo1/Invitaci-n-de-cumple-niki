@@ -1,0 +1,128 @@
+/* ===== VARIABLES ===== */
+:root {
+  --colorFondoRosa: #ffccd5;
+  --colorRojoPrincipal: #c1121f;
+  --posicionHorizontalBotonNo: 0px;
+  --posicionVerticalBotonNo: 0px;
+}
+
+/* ===== PÁGINA ===== */
+* { box-sizing: border-box; }
+
+.paginaInvitacion {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--colorFondoRosa);
+  color: var(--colorRojoPrincipal);
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+}
+
+/* ===== TARJETA ===== */
+.tarjetaInvitacion {
+  position: relative;
+  container-type: inline-size;
+  width: min(100vw, 480px, 64vh);
+  aspect-ratio: 620 / 960;
+}
+
+.ilustracionInvitacion { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ===== MARCO ONDULADO ===== */
+.lineaMarcoOndulado {
+  fill: none;
+  stroke: var(--colorRojoPrincipal);
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* ===== TEXTOS DE LA ILUSTRACIÓN ===== */
+.textoTeInvitoA, .textoFechaHora, .textoDireccion, .textoPreguntaAsistencia {
+  fill: var(--colorRojoPrincipal);
+  text-transform: uppercase;
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+}
+
+.textoTeInvitoA { font-size: 26px; letter-spacing: 3px; }
+.textoFechaHora { font-size: 34px; }
+.textoDireccion { font-size: 29px; }
+.textoPreguntaAsistencia { font-size: 26px; }
+
+.textoNombreFestejada, .textoBirthday {
+  fill: var(--colorRojoPrincipal);
+  font-family: "Caveat", "Brush Script MT", cursive;
+  font-weight: 700;
+}
+.textoNombreFestejada { font-size: 120px; }
+.textoBirthday { font-size: 118px; }
+
+/* ===== DIBUJOS ===== */
+.trazoRojo, .trazoEstrella {
+  fill: none;
+  stroke: var(--colorRojoPrincipal);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.trazoRojo { stroke-width: 3; }
+.trazoEstrella { stroke-width: 1.4; }
+
+/* ===== CONFIRMACIÓN ===== */
+.seccionConfirmacion {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80.5%;
+  z-index: 2;
+  text-align: center;
+}
+
+.contenedorBotonesAsistencia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4cqw;
+  min-height: 11cqw;
+}
+
+.botonConfirmarSi, .botonConfirmarNo {
+  font-family: inherit;
+  font-size: 5cqw;
+  padding: 1.6cqw 5.5cqw;
+  border: 0.7cqw solid var(--colorRojoPrincipal);
+  border-radius: 999px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.botonConfirmarSi { background: var(--colorRojoPrincipal); color: var(--colorFondoRosa); }
+.botonConfirmarSi:hover { transform: scale(1.08); }
+
+.botonConfirmarNo { background: transparent; color: var(--colorRojoPrincipal); }
+
+/* Cuando el "No" escapa, queda flotando por toda la pantalla */
+.botonConfirmarNo.botonEscapando {
+  position: fixed;
+  left: var(--posicionHorizontalBotonNo);
+  top: var(--posicionVerticalBotonNo);
+  z-index: 10;
+  font-size: 18px;
+  padding: 8px 22px;
+  transition: left 0.25s ease, top 0.25s ease;
+}
+
+.mensajeAsistenciaConfirmada { font-size: 7cqw; margin: 2cqw 0 0; text-transform: uppercase; }
+.oculto { display: none; }
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 600px) and (orientation: portrait) {
+  .paginaInvitacion { min-height: 100dvh; overflow-x: hidden; }
+  .tarjetaInvitacion { width: 100vw; }
+}
+
+.botonConfirmarSi, .botonConfirmarNo {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
