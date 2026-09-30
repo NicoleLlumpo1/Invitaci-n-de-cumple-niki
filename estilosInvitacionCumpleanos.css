@@ -126,3 +126,52 @@
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* ===== CUENTA REGRESIVA Y BEBIDAS ===== */
+.paginaInvitacion { flex-direction: column; padding-bottom: 24px; }
+
+.seccionExtras {
+  width: min(100vw, 480px);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cuentaRegresiva { display: flex; justify-content: center; gap: 12px; }
+
+.bloqueTiempo {
+  min-width: 64px;
+  padding: 8px 6px;
+  border: 3px solid var(--colorRojoPrincipal);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.numeroTiempo { font-size: 30px; line-height: 1; }
+.etiquetaTiempo { font-size: 14px; }
+
+.mensajeFiestaHoy { font-size: 28px; margin: 0; }
+.avisoBebidas { font-size: 22px; margin: 14px 0 0; }
+
+/* ===== AJUSTES FINALES PARA CELULAR ===== */
+html { -webkit-text-size-adjust: 100%; }
+
+.botonConfirmarSi, .botonConfirmarNo {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .paginaInvitacion { justify-content: flex-start; }
+  .tarjetaInvitacion { width: 100vw; }
+  .seccionExtras { width: 100%; padding: 0 12px; }
+  .cuentaRegresiva { gap: 8px; }
+  .bloqueTiempo { flex: 1; min-width: 0; max-width: 80px; }
+  .numeroTiempo { font-size: 26px; }
+  .etiquetaTiempo { font-size: 12px; }
+}
+
+/* Celulares acostados: que la tarjeta no quede diminuta */
+@media (max-height: 500px) {
+  .tarjetaInvitacion { width: min(100vw, 480px); }
+}

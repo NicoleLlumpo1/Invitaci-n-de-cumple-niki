@@ -66,3 +66,31 @@ botonConfirmarSi.addEventListener("click", funcionConfirmarAsistencia);
 
 /* ===== INICIO ===== */
 trazadoMarcoOndulado.setAttribute("d", funcionGenerarTrazadoMarcoOndulado());
+
+/* ===== CUENTA REGRESIVA ===== */
+const fechaDeLaFiesta = new Date("2026-10-03T20:00:00-03:00");
+const numeroDias = document.getElementById("numeroDias");
+const numeroHoras = document.getElementById("numeroHoras");
+const numeroMinutos = document.getElementById("numeroMinutos");
+const numeroSegundos = document.getElementById("numeroSegundos");
+const cuentaRegresiva = document.getElementById("cuentaRegresiva");
+const mensajeFiestaHoy = document.getElementById("mensajeFiestaHoy");
+
+function funcionActualizarCuentaRegresiva() {
+  const milisegundosFaltantes = fechaDeLaFiesta - new Date();
+
+  if (milisegundosFaltantes <= 0) {
+    cuentaRegresiva.classList.add("oculto");
+    mensajeFiestaHoy.classList.remove("oculto");
+    return;
+  }
+
+  const segundosTotales = Math.floor(milisegundosFaltantes / 1000);
+  numeroDias.textContent = Math.floor(segundosTotales / 86400);
+  numeroHoras.textContent = Math.floor((segundosTotales % 86400) / 3600);
+  numeroMinutos.textContent = Math.floor((segundosTotales % 3600) / 60);
+  numeroSegundos.textContent = segundosTotales % 60;
+}
+
+funcionActualizarCuentaRegresiva();
+setInterval(funcionActualizarCuentaRegresiva, 1000);
